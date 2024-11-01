@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icons/favicon.png">
+    <title>lieferquando</title>
+
+    <link rel="stylesheet" href="./assets/fonts/fonts.css">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/font_sizes.css">
+    <link rel="stylesheet" href="./styles/section_padding.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/flex.css">
+    <link rel="stylesheet" href="./styles/min_height_max_width_of_website.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/imprint_dataprivacy.css">
+    <link rel="stylesheet" href="./styles/contact.css">
+
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/db.js"></script>
+    <script src="./script.js"></script>
+    <script src="./scripts/standard.js"></script>
+    <script src="./scripts/contact.js"></script>
+</head>
+
+<body onload="includeHTML(), init()">
+
+    <div w3-include-html="assets/templates/header.html"></div>
+
+    <div class="min_height_max_width_of_website bg_deco header_footer_line">
+        <div class="main dfr header_line m_auto dfr cc">
+
+            <section class="block_style section_pad_left_right dfc cc">
+                <h1>El lieferquando</h1>
+                <div class="app_content dfr cfs">
+                    <section class="dishes_section_style dfc fsfs" id="food_section">
+                        <img class="food_teaser" src="assets/img/restaurant.jpg" alt="Essen">
+                        <div class="restaurant_informations dfc">
+                            <img class="restaurant_logo" src="assets/img/chinese_noodles.png">
+                            <text class="restaurant_text_infos dfc">
+                                <h2 class="restaurant_title">Paradise Noodles</h2>
+                                <span>Bewertung (4,2 von 5 Sternen)</span>
+                                <span>Ab € 40,- Bestellwert Lieferung frei Haus!</span>
+                            </text>
+                        </div>
+                        <section class="course_selection dfr sbc">
+                            <button class="btn_small backward_forward_btn dfr fsc">
+                                <img src="assets/icons/backward.png" alt="rückwärts">
+                            </button>
+                            <h3 class="selection dfr sbc" id="course_selection">
+                            </h3>
+                            <button class="btn_small backward_forward_btn dfr fec">
+                                <img src="assets/icons/forward.png" alt="vorwärts">
+                            </button>
+                        </section>
+                        <div class="selection_block dfc fsc" id="categories_dishes">
+                        </div>
+                    </section>
+                    <section class="shopping_basket_section resp_basket_line dfc fsc" id="resp_basket">
+                        <button class="resp_basket_headline" onclick="addOverlay()">
+                            <h2>Warenkorb</h2>
+                        </button>
+                        <div class="basket_container dfc" id="basket_container">
+                            <div class="basket_headline">
+                                <h2>Warenkorb</h2>
+                                <hr>
+                            </div>
+                            <div class="basket dfc cc">
+                                <div class="delivery_pickup dfr cc">
+                                    <input type="radio" class="chosen_option" id="delivery" onclick="delivery()"
+                                        name="delivery_pickup" value="delivery" checked>
+                                    <label for="delivery">Liefern</label>
+                                    <input type="radio" id="pickup" onclick="pickUp()" name="delivery_pickup"
+                                        value="pickup">
+                                    <label for="pickup">Abholen</label>
+                                </div>
+                                <hr>
+                                <div class="shopping_basket_with_price dfc fsc">
+                                    <div id="shopping_basket">
+                                    </div>
+                                    <div class="dfc fsc">
+                                        <div id="basket_price">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn resp_basket_close d_none" onclick="removeOverlay()">Zurück zu den
+                                Speisen</button>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div w3-include-html="assets/templates/footer.html"></div>
+</body>
+
+</html>
